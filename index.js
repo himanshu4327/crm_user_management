@@ -10,6 +10,7 @@ const seedCenterPrivileges = require("./utils/seedCenterPrivileges");
 // ✅ Import Routes
 const userRoutes = require("./routes/userRoutes");
 const activityLogRoutes = require("./routes/activityLogRoutes");
+const centerRoutes = require("./routes/centerRoutes");
 
 dotenv.config();
 connectDB();
@@ -23,6 +24,7 @@ app.use(express.json());
 // ✅ Register Routes
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/activity-logs", activityLogRoutes);
+app.use("/api/v1/center", centerRoutes);
 
 // // ✅ Seed roles at startup (optional: comment out after first run)
 // seedRoles();
