@@ -20,6 +20,17 @@ app.use(cors());
 app.use(express.json());
 
 
+// ✅ Health API
+app.get("/api/v1/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    message: "Server is healthy",
+    uptime: process.uptime(),
+    timestamp: new Date(),
+  });
+});
+
+
 
 // ✅ Register Routes
 app.use("/api/v1/users", userRoutes);
